@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+class HelloWorld {
+    static void Main() {
+        // Criação da lista com os dias da semana
+        List<string> MesDoano = new List<string> {
+            "Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", 
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezambro"
+        };
+
+        // Solicita ao usuário que insira um número
+        Console.WriteLine("Digite um número de 1 a 12:");
+        string numero = Console.ReadLine();
+
+        // Tenta converter o número inserido para inteiro
+        if (int.TryParse(numero, out int MesNumero) && MesNumero >= 1 && MesNumero <= 12) {
+            // Exibe o dia correspondente na lista
+            Console.WriteLine(MesDoano[MesNumero - 1]);
+        } else {
+            // Caso o número esteja fora do intervalo
+            Console.WriteLine("Dia inválido");
+        }
+    }
+}
